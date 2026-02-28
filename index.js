@@ -3,9 +3,9 @@ const axios = require("axios");
 const app = express();
 app.use(express.json());
 
-const ACCESS_TOKEN = "EAAlQvLn9A4gBQ1qfrelBAtN1SSuEVKwcZBTyE0qX2qMBBB61vZCqmu3bS9ZCpPBU73xWjRGnzZAWKAu9zcvEHV3FNfeBKZA89RtmdO07C00TphKrRxZA7klZCEE6NvKrRT2VunMVWzuoiZCTORejhrBFnggbWoyLSCuPpZCCFdfKQVyOuvOQ8OZAmi9QZCZBKvhZBU6paN6xfkMppjoCI3nCE4SWS3pZAlYOaYdZCwaxrUoUnb9pQoCNeNDFGJBMzWUi2SyQYuM96Gm8z26D1xBndB6ZCAAw";
-const PHONE_NUMBER_ID = "982415841626455";
-const VERIFY_TOKEN = "mybot123";
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+const PHONE_NUMBER_ID = process.env.PHONE_NUMBER_ID;
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
 app.get("/webhook", (req, res) => {
   const mode = req.query["hub.mode"];
