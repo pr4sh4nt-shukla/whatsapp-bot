@@ -48,7 +48,8 @@ function handleMessage(to, text) {
 
 async function sendText(to, message) {
   try {
-    await axios.post(
+    console.log(`Sending to ${to} with token: ${ACCESS_TOKEN?.substring(0, 20)}...`);
+    const response = await axios.post(
       `https://graph.facebook.com/v22.0/${PHONE_NUMBER_ID}/messages`,
       {
         messaging_product: "whatsapp",
@@ -63,8 +64,9 @@ async function sendText(to, message) {
         },
       }
     );
+    console.log("Message sent successfully!", response.data);
   } catch (err) {
-    console.error("Send error:", err.response?.data);
+    console.error("Send error:", JSON.stringify(err.response?.data, null, 2));
   }
 }
 
