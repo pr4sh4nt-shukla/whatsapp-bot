@@ -49,7 +49,7 @@ function handleMessage(to, text) {
 async function sendText(to, message) {
   try {
     await axios.post(
-      `https://graph.facebook.com/v22.0/${PHONE_NUMBER_ID}/messages`,,
+      `https://graph.facebook.com/v22.0/${PHONE_NUMBER_ID}/messages`,
       {
         messaging_product: "whatsapp",
         to: to,
